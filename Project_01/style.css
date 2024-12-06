@@ -2,3 +2,52 @@
     padding: 0;
     margin: 0;
 }
+
+.flex{
+    display: flex;  
+}
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex-direction-column{
+    display: flex;
+    flex-direction: column;
+}
+.align-center{
+    align-items: center;
+}
+.justify-center{
+    justify-content: center;
+}
+.justify-space-between{
+    justify-content: space-between;
+}
+.container{
+    width: 100%;
+}
+.form{
+    border: 1px solid black;
+    /* box-shadow: inset; */
+    border-radius: 7px;
+    padding: 30px 40px;
+}
+.heading{
+    text-align: center;
+}
+.submit{
+    background-color: rgb(22, 186, 241);
+    border: none;
+    color: white;
+    padding: 9px 0px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.submit:hover{
+    background-color: rgb(25, 145, 185);
+}
+.form-control{
+    color: grey;
+}
