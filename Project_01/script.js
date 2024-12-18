@@ -14,30 +14,35 @@ const password2 = document.getElementById('password2');
 const mode = document.getElementById('dark-mode');
 
 
-//Functions
+// Functions used in this Project :
+
+
+// Show Error :
 function showError(input, message) {
     const formControl = input.parentElement;
     formControl.className = 'form-control flex-direction-column error';
     const small = formControl.querySelector('small');
     small.innerText = message;
 }
+
+// Show Success :
 function showSuccess(input) {
     const formControl = input.parentElement;
     formControl.className = 'form-control flex-direction-column success'
 }
 
-function isValidEmail(email) {
-    const validateEmail = (email) => {
-        return String(email)
-            .toLowerCase()
-            .match(
-                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            );
-    };
+// Check Email is Valid :
+function checkEmail(input) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (re.test(input.value.trim())) {
+      showSuccess(input);
+    } else {
+      showError(input, 'Email is not valid');
+    }
+  }
+  
 
-}
-
-
+  // All the Event Listeners :
 form.addEventListener('submit', function (e) {
     e.preventDefault()
 
@@ -49,7 +54,7 @@ form.addEventListener('submit', function (e) {
     }
     if (email.value === '') {
         showError(email, "Email is required");
-    } else if (isValidEmail(email.value)) {
+    } else if (checkEmail(email.value)) {
         showError(email, "Email is required");
     } else {
         showSuccess(email);
@@ -66,8 +71,8 @@ form.addEventListener('submit', function (e) {
     }
 })
 
-mode.addEventListener('click', function (e) {
-    e.body;
+mode.addEventListener('click', function () {
+    document.body.classList.toggle('dark-mode')
 })
 
 
