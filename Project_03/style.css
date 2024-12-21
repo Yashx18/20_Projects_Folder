@@ -82,7 +82,7 @@ body{
     background-color: #fff;
 }
 .screen{
-    /* perspective: ; ADD PERSPECTIVE HERE AFTER SEARCHING IT ON STACK OVERFLOW*/ 
+    transform: rotateX(-45deg);
     min-width: 30%;
     min-height: 10vh;
     background-color: #fff;
@@ -91,6 +91,8 @@ body{
 }
 .container{
     margin: 40px 0px;
+    perspective: 1000px;
+
 }
 #num, #total{
     color: hsl(180, 100%, 40%);
