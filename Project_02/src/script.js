@@ -3,33 +3,36 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
-const small = document.querySelectorAll('small');
+let small = document.querySelector('small');
 // const smallArr = Array.from(small)
 
 // console.log(small);
 
 
 
-function showError(input) {
-    // small.forEach((item)=>{
-    //     item.style.display='flex'
-    // })
-    for (let i = 0; i < small.length; i++) {
-        const error = small[i];
-        error.style.display = 'flex'
-    }
+function showError(input , message) {
+//    console.log(input);
 
+   small.innerHTML = "Error"
+   small.className = "error";
+   console.log(message);
+   
+   
 }
-function showSuccess(input) {
+// showError()
+// showError()
+function showSuccess(message) {
     // small.forEach((item)=>{
     //     item.innerHTML="Success"
     //     item.style.color="#2ecc71"
     // })
-    for (let i = 0; i < small.length; i++) {
-        const success = small[i];
-        success.style.display = 'flex';
-        success.style.innerHTML = "Success"
-    }
+    // for (let i = 0; i < small.length; i++) {
+    //     const success = small[i];
+    //     success.style.display = 'flex';
+    //     success.style.innerHTML = "Success"
+    // }
+    small.className = "success";
+    small.innerHTML = message;
 }
 
 function checkRequired(inputArr) {
@@ -58,26 +61,26 @@ form.addEventListener('submit', function (e) {
     // checkRequired([username, email, password, password2]);
     // checkEmail(email)
     if (username.value === '') {
-        showError(e)
+        showError("Username is Required")
     } else {
-        showSuccess(e)
+        showSuccess()
     }
     if (email.value === '') {
-        showError(e)
+        showError(email,"Email is Required")
     } else if (!checkEmail(email.value)) {
-        showSuccess(e)
+        showSuccess(email,"Email is Required")
     } else {
-        showSuccess(e)
+        showSuccess(email)
     }
     if (password.value === '') {
-        showError(e)
+        showError(password,"Password is Required")
     } else {
-        showSuccess(e)
+        showSuccess(password)
     }
     if (password2.value === '') {
-        showError(e)
+        showError(password2, "Repeat Password is Required")
     } else {
-        showSuccess(e)
+        showSuccess(password2)
     }
 
 })
