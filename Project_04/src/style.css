@@ -1,0 +1,261 @@
+@font-face {
+    font-family: poppins;
+    src: url(/20_Projects_Folder/fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: opensans;
+    src: url(/20_Projects_Folder/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+
+:root {
+    --modal-duration: 1s;
+    --primary-color: #30336b;
+    --secondary-color: #be2edd;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins, opensans;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-dir-column {
+    flex-direction: column;
+}
+
+body {
+    /* background-color: #212121;
+    color: #fff; */
+    transition: 0.3s ease;
+}
+body.show-nav{
+    transform: translateX(15%);
+}
+ 
+
+.pfp {
+    border: 2px solid rgb(159, 157, 157);
+    border-radius: 50%;
+    height: 95px;
+}
+
+nav {
+    position: fixed;
+    background-color: var(--primary-color);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    min-width: 15%;
+    text-align: center;
+    padding: 20px 0px;
+    border-right: 1px solid #fff;
+}
+
+nav ul {
+    /* background-color: red; */
+    padding: 20px 0px;
+    list-style-type: none;
+}
+
+nav ul li {
+    /* margin: 20px 0px; */
+    padding: 15px;
+    border-bottom: 2px solid #807c7c;
+    text-align: start;
+}
+
+nav ul li:first-of-type {
+    border-top: 2px solid #807c7c;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li a:hover {
+    transform: scale(2, 2);
+    color: #c3c2c2;
+
+}
+
+header {
+    text-align: center;
+    position: relative;
+    top: 0;
+    padding: 40px;
+    background-color: var(--primary-color);
+    font-size: 1.3em;
+    color: #fff;
+}
+
+header h1 {
+    margin: 20px 0px;
+}
+
+header p {
+    margin: 20px 0px;
+}
+
+.cta-btn {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+.cta-btn:active{
+    background-color: #bd2edd69;
+}
+
+.toggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 7px 10px 4px;
+    background-color: rgba(0, 0, 0, 0.297);
+    border: none;
+    /* text-align: center; */
+    border-radius: 5px;
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 800px;
+}
+
+.container ul {
+    padding: 20px;
+}
+
+.modal-container{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    /* height: 100vh;
+    width: 100%; */
+    background-color: #0000007f;
+}
+.modal-container.show-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background-color: #000000b8;
+}
+
+.modal {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00000077;
+    /* display: block; */
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    width: 35%;
+    height: 80%;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    animation-name: modal-open;
+    animation-duration: var(--modal-duration);
+}
+/* .modal.close{
+    display: none;
+} */
+.modal-form{
+    width: 100%;
+}
+.modal-header{
+    width: 100%;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px;
+}
+.modal-header h3{
+    margin: 0;
+}
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 4px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+}
+.close-btn:active{
+    background-color: #bd2eddab;
+}
+ .submit-btn{
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 10px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    width: 100%;
+    margin-top: 10px;
+ }
+ .submit-btn:active{
+    background-color: #844292fa;
+}
+.modal-content{
+    padding: 10px 20px;
+}
+
+.modal-form div{
+    margin: 15px 0;
+    
+}
+.modal-form div input{
+    width: 100%;
+    border: 1.5px solid rgb(82, 82, 82);
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+
+.modal-form label{
+    margin-bottom: 5px;
+    display: block;
+}
+
+@keyframes modal-open {
+    from{
+        opacity: 0;
+    }   
+    to{
+        opacity: 1;
+    }
+}
+@media screen {
+    
+}
