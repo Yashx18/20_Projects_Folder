@@ -67,6 +67,12 @@ body{
     cursor: pointer;
     background-color: hsl(244, 19%, 40%);
     transform: scale(1.2,1.2);
+    background-color: hsl(180, 100%, 45%)
+
+}
+.seat:active:not(.occupied, .example){
+    
+    background-color: hsl(180, 100%, 35%)
 
 }
 .seat:nth-child(2){
@@ -75,7 +81,7 @@ body{
 .seat:nth-last-child(2){
     margin-left: 15px;
 }
-.selected{
+.seat.selected{
     background-color: hsl(180, 100%, 45%);
 }
 .occupied{

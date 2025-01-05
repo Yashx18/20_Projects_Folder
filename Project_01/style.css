@@ -133,3 +133,8 @@ body {
 .form-control.error small{
     visibility: visible;
 }
+@media (max-width: 1250px ) {
+    .container{
+        width: 55%;
+    }
+}

@@ -4,84 +4,54 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 let small = document.querySelector('small');
-// const smallArr = Array.from(small)
 
-// console.log(small);
-
-
-
-function showError(input , message) {
-//    console.log(input);
-
-   small.innerHTML = "Error"
-   small.className = "error";
-   console.log(message);
-   
-   
-}
-// showError()
-// showError()
-function showSuccess(message) {
-    // small.forEach((item)=>{
-    //     item.innerHTML="Success"
-    //     item.style.color="#2ecc71"
-    // })
-    // for (let i = 0; i < small.length; i++) {
-    //     const success = small[i];
-    //     success.style.display = 'flex';
-    //     success.style.innerHTML = "Success"
-    // }
-    small.className = "success";
-    small.innerHTML = message;
+//showError Function
+function showError(input, message){
+    const formControl = input.parentElement
+    formControl.classList = "form-control input-section error"
+    small = formControl.querySelector('small')
+    small.innerText = message
 }
 
-function checkRequired(inputArr) {
-    inputArr.forEach((input) => {
-        if (input.value === '') {
-
-            showError(input)
-        } else {
-            showSuccess(input)
-        }
-
-    });
+//showSuccess Function
+function showSuccess(input, message){
+    const formControl = input.parentElement
+    formControl.classList = "form-control input-section success"
+    small = formControl.querySelector('small')
+    small.innerText = message
 }
-// Check email is valid
-function checkEmail(input) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (re.test(input.value)) {
-        showSuccess(input);
-    } else {
-        showError(input, 'Email is not valid');
+
+// To Validate Username
+function validateUsername(input){
+    const username = input.value
+    // console.log(username);
+    
+    if (username.length > 20){
+        small.innerHTML="Username cannot be more than 20 Charachters"
     }
 }
-form.addEventListener('submit', function (e) {
-    e.preventDefault()
-
-    // checkRequired([username, email, password, password2]);
-    // checkEmail(email)
+//Event Listeners
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
     if (username.value === '') {
-        showError("Username is Required")
+        showError(username, "Enter Username")
     } else {
-        showSuccess()
+        showSuccess(username, "Success")
+        validateUsername(username);
     }
     if (email.value === '') {
-        showError(email,"Email is Required")
-    } else if (!checkEmail(email.value)) {
-        showSuccess(email,"Email is Required")
+        showError(email, "Enter Email")
     } else {
-        showSuccess(email)
+        showSuccess(email, "Success")
     }
     if (password.value === '') {
-        showError(password,"Password is Required")
+        showError(password, "Enter Password")
     } else {
-        showSuccess(password)
+        showSuccess(password,"Success")
     }
     if (password2.value === '') {
-        showError(password2, "Repeat Password is Required")
+        showError(password2, "Enter Password Again")
     } else {
-        showSuccess(password2)
+        showSuccess(password2,"Success")
     }
-
 })
-

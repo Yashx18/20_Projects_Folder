@@ -152,17 +152,25 @@ body{
 }
 small{
     color: var(--error-color);
+    font-weight: 600;
     display: none;
 }
-small.error{
+/* small.error{
     color: var(--error-color);
     display: flex;
 }
 small.success{
     color: var(--success-color);
     display: flex;
+} */
+.form-control.error small{
+    display: flex;
+    color: var(--error-color);
 }
-
+.form-control.success small{
+    display: flex;
+    color: var(--success-color);
+}
 label{
     font-size: 12px;
     padding-bottom: 5px;
