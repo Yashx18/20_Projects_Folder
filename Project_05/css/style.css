@@ -1,0 +1,102 @@
+@font-face {
+    font-family: poppins;
+    src: url(/20_Projects_Folder/fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: opensans;
+    src: url(/20_Projects_Folder/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+
+:root {
+    --modal-duration: 1s;
+    --primary-color: #30336b;
+    --secondary-color: #be2edd;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins, opensans;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-dir-column {
+    flex-direction: column;
+}
+
+body {
+    background-color: #212121;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    /* transition: 0.3s ease; */
+}
+
+h1 {
+    color: #fff;
+}
+
+.screen {
+    cursor: pointer;
+    width: 50%;
+    background-color: #000 !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.controls {
+    background-color: #333;
+    color: #fff;
+    width: 50%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px;
+}
+
+.controls .btn {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.controls .fa-play {
+    color: #28a745;
+}
+
+.controls.fa-pause {
+    color: #fff;
+}
+
+.controls .fa-stop {
+    color: #dc3545;
+}
+
+.controls .timestamp {
+    color: #fff;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+@media(max-width : 800px) {
+
+    .scrren,
+    .controls {
+        width: 50%;
+    }
+}
+
+.btn:focus {
+    outline: 0;
+}
