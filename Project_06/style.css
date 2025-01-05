@@ -1,0 +1,61 @@
+@font-face {
+    font-family: poppins;
+    src: url(/20_Projects_Folder/fonts/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: opensans;
+    src: url(/20_Projects_Folder/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+:root{
+    --primary-color: #5fbaa7;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins, opensans;
+}
+body{
+    background-color: #f4f4f4;
+    width: 100%;
+    height: 100vh;
+}
+.flex{
+    display: flex;
+}
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex-dir-column{
+    flex-direction: column;
+}
+.flex-align-center{
+    display: flex;
+    align-items: center;
+}
+.flex-justify-center{
+    display: flex;
+    justify-content: center;
+}
+img{
+    width: 150px;
+}
+h1{
+    color: var(--primary-color);
+}
+.btn{
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #60e1c5;
+}
+.btn:active{
+    background-color: #46ac96;
+}
